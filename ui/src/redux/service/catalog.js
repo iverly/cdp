@@ -4,10 +4,10 @@ export const catalogApi = createApi({
   reducerPath: "catalogApi",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8080" }),
   endpoints: (builder) => ({
-    getCatalog: builder.query({
-      query: () => `/catalog`,
+    getProducts: builder.query({
+      query: () => `/products`,
     }),
   }),
 });
 
-export const { useGetCatalog } = catalogApi;
+export const { useGetProductsQuery } = catalogApi;
