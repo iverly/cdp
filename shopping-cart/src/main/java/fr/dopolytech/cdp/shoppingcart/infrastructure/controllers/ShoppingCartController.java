@@ -19,12 +19,12 @@ class ShoppingCartController {
 
     private final GetShoppingCart getShoppingCart;
 
-    @GetMapping(value = "/shopping-cart", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/shopping-carts", produces = MediaType.APPLICATION_JSON_VALUE)
     public ShoppingCart getShoppingCart(){
         return getShoppingCart.get("1");
     }
 
-    @PostMapping(value ="/shopping-cart", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value ="/shopping-carts", produces = MediaType.APPLICATION_JSON_VALUE)
     public ShoppingCart createShoppingCart(@RequestBody CreateShoppingCartForm createShoppingCartForm) {
         return createShoppingCart.create(createShoppingCartForm.toShoppingCart());
     }
