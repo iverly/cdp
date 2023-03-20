@@ -19,6 +19,7 @@
         <module>catalog</module>
         <module>shopping-cart</module>
         <module>order</module>
+        <module>gateway</module>
     </modules>
 
 </project>
