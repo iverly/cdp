@@ -21,6 +21,7 @@
         <module>order</module>
         <module>gateway</module>
         <module>discovery-server</module>
+        <module>inventory</module>
     </modules>
 
 </project>
