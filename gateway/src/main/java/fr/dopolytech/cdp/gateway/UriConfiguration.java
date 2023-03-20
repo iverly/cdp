@@ -7,7 +7,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class UriConfiguration {
 
     @Getter
-    private final String catalogService = "lb://catalog-service";
+    private final String catalogService = "http://localhost:3001";
 
     @Getter
     private final String shoppingCartService = "http://localhost:3002";
