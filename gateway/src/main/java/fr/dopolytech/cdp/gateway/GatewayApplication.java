@@ -25,13 +25,13 @@ public class GatewayApplication {
 
 		return builder.routes()
 			.route(p -> p
-				.path("/products")
+				.path("/products/**")
 				.uri(catalogUri))
 			.route(p -> p
-				.path("/shopping-carts")
+				.path("/shopping-carts/**")
 				.uri(shoppingCartUri))
 			.route(p -> p
-					.path("/orders")
+					.path("/orders/**")
 					.uri(orderUri))
 			.build();
 	}
