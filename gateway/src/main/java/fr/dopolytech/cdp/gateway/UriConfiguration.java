@@ -7,15 +7,15 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class UriConfiguration {
 
     @Getter
-    private final String catalogService = "http://localhost:3001";
+    private final String catalogService = "catalog-service";
 
     @Getter
-    private final String shoppingCartService = "http://localhost:3002";
+    private final String shoppingCartService = "shopping-cart-service";
 
     @Getter
-    private final String orderService = "http://localhost:3003";
+    private final String orderService = "order-service";
 
     @Getter
-    private final String inventoryService = "http://localhost:3004";
+    private final String inventoryService = "inventory-service";
 
 }

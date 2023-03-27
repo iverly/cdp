@@ -31,19 +31,12 @@ public class ProductAggregatorService {
         List<ProductInformation> productInformationList = tuple.getT1();
         List<ProductInventory> productInventoryList = tuple.getT2();
 
-        System.out.println(productInformationList);
-        System.out.println(productInventoryList);
-
         return productInformationList.stream()
             .map(productInformation -> {
-                System.out.println(productInformation);
-
                 ProductInventory productInventory = productInventoryList.stream()
                     .filter(pi -> pi.getProductId().equals(productInformation.getId()))
                     .findFirst()
                     .orElse(new ProductInventory(0L, productInformation.getId(), -1f, -1));
-
-                System.out.println(productInventory);
 
                 return Product.of(
                     productInformation.getId(),
