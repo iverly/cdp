@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useMemo } from "react";
 import { Button, Card, Text, Metric } from "@tremor/react";
 import { format } from "currency-formatter";
 import {
@@ -42,6 +42,16 @@ export default function ProductCard({ product }) {
     triggerUpdateShoppingCart(newShoppingCart);
   }, [triggerUpdateShoppingCart, data]);
 
+  const isOutOfStock = useMemo(() => {
+    if (isLoading || isError) return false;
+
+    const productInShoppingCart = data?.products?.find(
+      (p) => p.productId === product.id
+    );
+
+    return product.quantity - (productInShoppingCart?.quantity || 0) <= 0;
+  }, [isLoading, isError, data, product]);
+
   return (
     <Card key={`${product.id}-${nanoid()}`}>
       <Metric>{product.name}</Metric>
@@ -49,9 +59,9 @@ export default function ProductCard({ product }) {
       <Button
         className="mt-2"
         onClick={handleAddToCheckout}
-        disabled={isLoading || isError}
+        disabled={isOutOfStock}
       >
-        Add to checkout
+        {isOutOfStock ? "Out of stock" : "Add to checkout"}
       </Button>
     </Card>
   );
