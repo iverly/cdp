@@ -6,4 +6,10 @@ public interface ProductRepository {
 
     List<Product> findAll();
 
+    Product findById(String id);
+
+    Product save(Product product);
+
+    Product findByProductId(String productId);
+
 }
