@@ -24,6 +24,7 @@
         <module>inventory</module>
         <module>saga-orchestrator</module>
         <module>payment</module>
+        <module>shipping</module>
     </modules>
 
 </project>

@@ -16,7 +16,7 @@ public class CreatePayment {
 
     private final RabbitMQEventEmitterService eventEmitterService;
 
-    public Payment create(CreatePaymentDTO paymentDTO) {
+    public CreatePaymentDTO create(CreatePaymentDTO paymentDTO) {
         Payment payment = new Payment(
             paymentDTO.getPrice()
         );
@@ -29,7 +29,7 @@ public class CreatePayment {
             paymentDTO
         );
 
-        return savedPayment;
+        return paymentDTO;
     }
 
 }
