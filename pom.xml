@@ -23,6 +23,7 @@
         <module>discovery-server</module>
         <module>inventory</module>
         <module>saga-orchestrator</module>
+        <module>payment</module>
     </modules>
 
 </project>

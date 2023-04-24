@@ -2,7 +2,7 @@ package fr.dopolytech.cdp.inventory.usecases;
 
 import fr.dopolytech.cdp.inventory.domain.Product;
 import fr.dopolytech.cdp.inventory.domain.ProductRepository;
-import fr.dopolytech.cdp.inventory.infrastructure.dtos.DecreaseStockDTO;
+import fr.dopolytech.cdp.inventory.infrastructure.dtos.IncreaseStockDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -12,8 +12,8 @@ public class IncreaseStock {
 
     private final ProductRepository productRepository;
 
-    public void increaseStock(DecreaseStockDTO decreaseStockDTO) {
-        decreaseStockDTO.getProducts().forEach(po -> {
+    public void increaseStock(IncreaseStockDTO increaseStockDTO) {
+        increaseStockDTO.getProducts().forEach(po -> {
             Product product = this.productRepository.findByProductId(po.getProductId());
 
             if (product == null) {

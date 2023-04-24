@@ -2,7 +2,7 @@ package fr.dopolytech.cdp.inventory.usecases;
 
 import fr.dopolytech.cdp.inventory.domain.Product;
 import fr.dopolytech.cdp.inventory.domain.ProductRepository;
-import fr.dopolytech.cdp.inventory.infrastructure.dtos.DecreaseStockDTO;
+import fr.dopolytech.cdp.saga.infrastructure.dtos.DecreaseStockDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

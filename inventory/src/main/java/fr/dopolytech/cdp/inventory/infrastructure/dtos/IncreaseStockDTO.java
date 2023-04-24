@@ -1,4 +1,4 @@
-package fr.dopolytech.cdp.saga.infrastructure.dtos;
+package fr.dopolytech.cdp.inventory.infrastructure.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,11 +9,9 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class DecreaseStockDTO {
+public class IncreaseStockDTO {
 
     private Long orderId;
-
-    private float price;
 
     private List<OrderProduct> products;
 

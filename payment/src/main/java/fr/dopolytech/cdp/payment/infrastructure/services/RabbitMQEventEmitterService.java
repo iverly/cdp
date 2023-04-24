@@ -1,4 +1,4 @@
-package fr.dopolytech.cdp.order.infrastructure.services;
+package fr.dopolytech.cdp.payment.infrastructure.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +21,7 @@ public class RabbitMQEventEmitterService {
         ProducerTemplate template = this.context.createProducerTemplate();
 
         template.send(
-            "spring-rabbitmq:" + exchange + "?queues=" + exchange + ".out." + routingKey + "&routingKey=" + routingKey + "&autoDeclare=true",
+            "spring-rabbitmq:" + exchange + "?queues=" + exchange + ".out&routingKey=" + routingKey + "&autoDeclare=true",
             new Processor(payload, objectMapper)
         );
     }

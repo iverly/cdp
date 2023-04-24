@@ -1,4 +1,4 @@
-package fr.dopolytech.cdp.saga.infrastructure.dtos;
+package fr.dopolytech.cdp.payment.infrastructure.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,9 +9,11 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class DecreaseStockDTO {
+public class CancelPaymentDTO {
 
     private Long orderId;
+
+    private Long paymentId;
 
     private float price;
 

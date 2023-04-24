@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 public class RabbitMQUriHelper {
 
     public static String constructSagaUri(RabbitMQUriHelper.Constants.Exchange exchange, RabbitMQUriHelper.Constants.Queue queueName, RabbitMQUriHelper.Constants.RoutingKey routingKey) {
-        return "spring-rabbitmq:" + exchange.getName() + "?queues=" + queueName.getName(exchange) + "&routingKey=" + routingKey.getName() + "&autoDeclare=true";
+        return "spring-rabbitmq:" + exchange.getName() + "?queues=" + queueName.getName(exchange) + "." + routingKey.getName() + "&routingKey=" + routingKey.getName() + "&autoDeclare=true";
     }
 
     public static class Constants {

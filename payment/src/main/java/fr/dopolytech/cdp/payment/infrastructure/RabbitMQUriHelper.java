@@ -1,4 +1,4 @@
-package fr.dopolytech.cdp.inventory.infrastructure;
+package fr.dopolytech.cdp.payment.infrastructure;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +14,7 @@ public class RabbitMQUriHelper {
         @RequiredArgsConstructor
         @Getter
         public enum Exchange {
-            INVENTORY("inventory");
+            PAYMENT("payment");
             private final String name;
         }
 
@@ -32,10 +32,10 @@ public class RabbitMQUriHelper {
         @RequiredArgsConstructor
         @Getter
         public enum RoutingKey {
-            DECREASE_STOCK("DECREASE_STOCK"),
-            STOCK_DECREASED("STOCK_DECREASED"),
-            DECREASE_STOCK_FAILED("DECREASE_STOCK_FAILED"),
-            REVERT_DECREASED_STOCK("REVERT_DECREASED_STOCK");
+            CREATE_PAYMENT("CREATE_PAYMENT"),
+            PAYMENT_CREATED("PAYMENT_CREATED"),
+            PAYMENT_FAILED("PAYMENT_FAILED"),
+            CANCEL_PAYMENT("CANCEL_PAYMENT");
 
             private final String name;
         }
