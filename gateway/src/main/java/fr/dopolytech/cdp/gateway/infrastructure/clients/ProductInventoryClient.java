@@ -15,13 +15,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductInventoryClient {
 
-    private final ReactorLoadBalancerExchangeFilterFunction lbFunction;
-
     private final UriConfiguration uriConfiguration;
 
     private WebClient buildWebClient() {
         return WebClient.builder()
-                .filter(this.lbFunction)
                 .baseUrl("http://" + this.uriConfiguration.getInventoryService())
                 .build();
     }

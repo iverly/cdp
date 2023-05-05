@@ -3,7 +3,6 @@ package fr.dopolytech.cdp.gateway.infrastructure.clients;
 import fr.dopolytech.cdp.gateway.UriConfiguration;
 import fr.dopolytech.cdp.gateway.domain.ProductInformation;
 import lombok.RequiredArgsConstructor;
-import org.springframework.cloud.client.loadbalancer.reactive.ReactorLoadBalancerExchangeFilterFunction;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
@@ -15,13 +14,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductInformationClient {
 
-    private final ReactorLoadBalancerExchangeFilterFunction lbFunction;
-
     private final UriConfiguration uriConfiguration;
 
     private WebClient buildWebClient() {
         return WebClient.builder()
-                .filter(this.lbFunction)
                 .baseUrl("http://" + this.uriConfiguration.getCatalogService())
                 .build();
     }
