@@ -2,8 +2,8 @@
 FROM node:16-alpine AS build
 WORKDIR /app
 
-ARG baseUrl=http://localhost:3000
-ENV VITE_BASE_URL=$baseUrl
+ARG VITE_BASE_URL=http://localhost:3000
+ENV VITE_BASE_URL=$VITE_BASE_URL
 
 COPY package.json .
 COPY yarn.lock .

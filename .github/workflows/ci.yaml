@@ -50,3 +50,5 @@ jobs:
           context: "{{defaultContext}}:${{ matrix.module }}"
           push: true
           tags: ghcr.io/iverly/cdp-${{ matrix.module }}:latest
+          build-args: |
+            VITE_BASE_URL=gw.cdp.pt.iverly.net
