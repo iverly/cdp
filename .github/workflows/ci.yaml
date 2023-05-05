@@ -49,6 +49,7 @@ jobs:
         with:
           context: "{{defaultContext}}:${{ matrix.module }}"
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: ghcr.io/iverly/cdp-${{ matrix.module }}:latest
           build-args: |
             VITE_BASE_URL=gw.cdp.pt.iverly.net
