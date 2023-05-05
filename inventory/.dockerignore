@@ -1,0 +1,17 @@
+/target
+/build
+.idea/
+.git/
+.gitignore
+.DS_Store
+.AppleDouble
+.LSOverride
+.Trashes
+__MACOSX/
+.editorconfig
+.gitlab-ci.yml
+CHANGELOG.md
+docker-compose.yml
+example.env
+README.md
+Dockerfile
